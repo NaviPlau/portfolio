@@ -1,0 +1,96 @@
+<section>
+  <div>
+    <div class="leftSide">
+      <span>
+        {{ currentLanguage === 'EN' ? 'Contact me' : 'Kontaktiere mich' }}
+      </span>
+      <h1>
+        {{ currentLanguage === 'EN' ? "Let's work together" : 'Lass uns kooperieren' }}
+      </h1>
+      <div class="solvingProblem">
+        <span>
+          {{ currentLanguage === 'EN' ? 'Got a Problem to solve?' : 'Hast du ein Problem zu lösen?' }}
+        </span>
+        <p>
+          {{ currentLanguage === 'EN' ? 
+            'Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to your projects with my work.' : 
+            'Kontaktiere mich über dieses Formular, ich bin daran interessiert, von dir zu hören, deine Ideen kennenzulernen und mit meiner Arbeit zu deinen Projekten beizutragen.' 
+          }}
+        </p>
+        <span>
+          {{ currentLanguage === 'EN' ? 'Need a Frontend Developer?' : 'Brauchst du einen Frontend-Entwickler?' }}
+          <p>
+            {{ currentLanguage === 'EN' ? "Let's Talk!" : 'Lass uns sprechen!' }}
+          </p>
+        </span>
+      </div>
+    </div>
+
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" *ngIf="formVisible">
+      <div class="form-group">
+        <label for="name">
+          {{ currentLanguage === 'EN' ? "What's your name?" : 'Wie heißt du?' }}
+        </label>
+        <input type="text" 
+               id="name" 
+               formControlName="name" 
+               [ngClass]="{'invalid-field': contactForm.get('name')?.touched && contactForm.get('name')?.invalid}"
+               [placeholder]="contactForm.get('name')?.touched && contactForm.get('name')?.invalid ? 
+                 (currentLanguage === 'EN' ? 'Please provide your name.' : 'Bitte gib deinen Namen an.') : 
+                 (currentLanguage === 'EN' ? 'Your name goes here' : 'Dein Name hier')
+               ">
+      </div>
+    
+      <div class="form-group">
+        <label for="email">
+          {{ currentLanguage === 'EN' ? "What's your email?" : 'Wie lautet deine E-Mail?' }}
+        </label>
+        <input type="email" 
+               id="email" 
+               formControlName="email" 
+               [ngClass]="{'invalid-field': contactForm.get('email')?.touched && contactForm.get('email')?.invalid}"
+               [placeholder]="contactForm.get('email')?.touched && contactForm.get('email')?.invalid ? 
+                 (currentLanguage === 'EN' ? 'Hoppla! your email is required' : 'Hoppla! Deine E-Mail ist erforderlich') : 
+                 (currentLanguage === 'EN' ? 'youremail@email.com' : 'deineemail@email.com')
+               ">
+      </div>
+    
+      <div class="form-group">
+        <label for="message">
+          {{ currentLanguage === 'EN' ? 'How can I help you?' : 'Wie kann ich dir helfen?' }}
+        </label>
+        <textarea id="message" 
+                  formControlName="message" 
+                  [ngClass]="{'invalid-field': contactForm.get('message')?.touched && contactForm.get('message')?.invalid}"
+                  [placeholder]="contactForm.get('message')?.touched && contactForm.get('message')?.invalid ? 
+                    (currentLanguage === 'EN' ? 'Please provide a message.' : 'Bitte eine Nachricht angeben.') : 
+                    (currentLanguage === 'EN' ? 'Hello Paul, I am interested in...' : 'Hallo Paul, ich interessiere mich für...')
+                  "></textarea>
+      </div>
+    
+      <div class="form-group checkbox-group">
+        <input type="checkbox" id="privacyPolicy" formControlName="privacyPolicy">
+        <label for="privacyPolicy">
+          {{ currentLanguage === 'EN' ? "I've read the " : 'Ich habe die '}}
+          <a href="policy">{{ currentLanguage === 'EN' ? 'privacy policy' : 'Datenschutzrichtlinie' }}</a>
+          {{ currentLanguage === 'EN' ? " and agree to the processing of my data as outlined." : " und stimme der Verarbeitung meiner Daten wie beschrieben zu." }}
+        </label>
+        <div *ngIf="contactForm.get('privacyPolicy')?.touched && contactForm.get('privacyPolicy')?.invalid" class="error">
+          {{ currentLanguage === 'EN' ? 'Please accept the privacy policy.' : 'Bitte akzeptiere die Datenschutzrichtlinie.' }}
+        </div>
+      </div>
+    
+      <button type="submit" [disabled]="contactForm.invalid">
+        <span>
+          {{ currentLanguage === 'EN' ? 'Say Hello ;)' : 'Sag Hallo ;)' }}
+        </span>
+      </button>
+    </form>
+    <div *ngIf="showSuccessMessage" class="mailSuccessResponse">
+      <div class="hoppingBox"></div>
+      <p>
+        {{ currentLanguage === 'EN' ? 'Your email was sent successfully!' : 'Ihre E-Mail wurde erfolgreich gesendet!' }}
+      </p>
+    </div>
+  </div>
+</section>

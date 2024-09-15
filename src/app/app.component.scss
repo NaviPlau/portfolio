@@ -1,0 +1,56 @@
+@import '../styles.scss';
+
+@keyframes pulse {
+  0% {
+    
+    transform: scale(14);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(30);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(14);
+    opacity: 0;
+  }
+}
+
+.cursor-shadow {
+  z-index: 77777;
+  box-sizing: content-box;
+  position: fixed;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(61, 207, 182, 0.5) 0%, rgba(61, 207, 182, 0) 100%);
+  pointer-events: none;
+  opacity: 0.8;
+  animation: pulse 3s ease-out infinite;
+}
+
+.landscape-warning {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  text-align: center;
+  font-size: 32px;
+  font-family: 'fira';
+  color: $blue;
+  background-image: url('../assets/img/hero/hero-background.png');
+  background-size: cover;
+}
+
+.portrait-only-content {
+  display: block;
+}
+
+
+@media (pointer: coarse) {
+ .cursor-shadow{
+  display: none;
+ }
+}

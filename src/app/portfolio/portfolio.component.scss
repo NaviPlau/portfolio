@@ -1,0 +1,453 @@
+@import "../../styles.scss";
+
+section {
+  background-color: #1c1c1c;
+  width: 100vw;
+  padding: 30px 30px 90px 30px;
+  max-width: 100%;
+  color: white;
+  position: relative;
+  @include display(row, center);
+  align-items: flex-start;
+  > div {
+    width: 100%;
+    height: 100%;
+    max-width: 1440px;
+    margin: 0;
+    @include display(row, space-between);
+    align-items: flex-start;
+    position: relative;
+  }
+}
+
+.leftSide {
+  margin: 0;
+  @include display(column, flex-start);
+  width: 50%;
+  gap: 41px;
+  > span {
+    margin: 0;
+    width: 100%;
+    text-align: left;
+    color: $blue;
+    font-family: "karla";
+    font-size: 24px;
+    margin-bottom: -21px;
+  }
+}
+
+.projectsHeader {
+  @include display(column, center);
+  align-items: flex-start;
+  margin: 0;
+  width: 100%;
+  gap: 41px;
+  > h1 {
+    font-size: 64px;
+    font-family: "fira";
+    color: $blue;
+  }
+  > p {
+    font-size: 18px;
+    font-family: "karla";
+  }
+}
+
+.projects {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  @include display(column, flex-start);
+  align-items: flex-start;
+  border-bottom: 1px solid $blue-hover;
+}
+
+.project {
+  @include display(row, space-between);
+  width: 100%;
+  padding: 30px 40px;
+  border-top: 1px solid $blue-hover;
+  > :nth-child(1) {
+    font-size: 24px;
+    font-family: "fira";
+    cursor: pointer;
+    @include display(row, space-between);
+    gap: 10px;
+    > img {
+      display: none;
+    }
+  }
+  > :nth-child(2) {
+    @include display(row, center);
+    gap: 4px;
+    font-family: "karla";
+    font-size: 18px;
+    cursor: pointer;
+    > b {
+      color: $blue;
+      font-weight: 100;
+    }
+  }
+}
+
+.project {
+  &:hover {
+    transition: 125ms;
+    background-color: $blue-hover;
+    cursor: pointer;
+    > span {
+      > img {
+        display: flex;
+      }
+    }
+  }
+}
+
+.projectImages {
+  position: relative;
+  width: 45%;
+  height: 100%;
+}
+
+.imgContainer {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 50%);
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+}
+
+.background-image,.background-image1,.background-image2 {
+  border-radius: 20px;
+  flex: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 94%;
+  height: 90%;
+  background-image: url("../../assets/img/projects/join.png");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  z-index: 3;
+}
+
+.stripe-overlay {
+  border-radius: 20px;
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 95%;
+  height: 90%;
+  background: repeating-linear-gradient(
+    135deg,
+    $blue-hover 0,
+    $blue 2px,
+    transparent 2px,
+    transparent 16px
+  );
+  z-index: 1;
+}
+
+.background-image1 {
+  background-position: center;
+  background-image: url("../../assets/img/projects/elpolloloco.png");
+}
+
+.background-image2 {
+  background-image: url("../../assets/img/projects/dabubble.png") !important;
+}
+
+.close {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  background-image: url("../../assets/img/projects/overlay/close.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: background-image 300ms ease;
+  &:hover {
+    background-image: url("../../assets/img/projects/overlay/closeHover.png");
+  }
+}
+
+.nextProject {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  @include display(row, flex-start);
+  gap: 10px;
+  cursor: pointer;
+  width: fit-content;
+  > span {
+    font-size: 18;
+    font-family: "karla";
+    color: $blue;
+  }
+}
+.nextProject:hover img,.nextProject:hover span {
+  scale: 1.1;
+  transition: 125ms;
+  cursor: pointer;
+  color: white;
+}
+
+.openedProjectInfo {
+  @include display(column, flex-start);
+  align-items: flex-start;
+  width: 40%;
+  gap: 40px;
+}
+
+.projectTitle {
+  @include display(column, flex-start);
+  align-items: flex-start;
+  > :nth-child(1) {
+    font-size: 128px;
+    font-family: "karla";
+    color: $blue;
+  }
+  > :nth-child(2) {
+    font-size: 64px;
+    font-family: "fira";
+  }
+}
+
+.projectAbout {
+  @include display(column, flex-start);
+  align-items: flex-start;
+  > h1 {
+    font-family: "fira";
+    color: $blue;
+    font-size: 24px;
+  }
+  > p {
+    font-family: "karla";
+  }
+}
+
+.overlay {
+  position: absolute;
+  background-image: url(../../assets/img/hero/hero-background.png);
+  background-size: cover;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  min-height: 70vh;
+  z-index: 12;
+  border-radius: 30px;
+  padding: 80px;
+  border: 2px solid $blue-hover;
+  @include display(row, space-between);
+}
+
+.icons {
+  @include display(row, center);
+  gap: 16px;
+  > .eachIcon {
+    @include display(row, center);
+    gap: 4px;
+  }
+}
+
+.overlayButtons {
+  @include display(row, center);
+  gap: 32px;
+  position: relative;
+  >a {
+    position: relative;
+    @include display(row, center);
+    padding: 12px 24px;
+    border: 1px solid white;
+    border-radius: 30px;
+    background-color: transparent;
+    gap: 4px;
+    font-size: 18px;
+    font-family: "karla";
+    transition: border 300ms, color 300ms;
+    cursor: pointer;
+    &:hover {
+      border: 1px solid $blue;
+      color: $blue;
+      > div {
+        cursor: pointer;
+        animation: moveImage 1.35s ease-in-out infinite;
+      }
+    }
+    > span {
+      cursor: pointer;
+    }
+    > div {
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+  }
+}
+
+@keyframes moveImage {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(40%, -10%);
+  }
+}
+.openedProjectImage {
+  width: 40%;
+  height: 80%;
+  @include display(row, flex-start);
+  > img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1120px) {
+  .projectImages {
+    display: none;
+  }
+  .leftSide {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .overlay {
+    flex-direction: column-reverse;
+    padding: 40px;
+    gap: 32px;
+    min-height: 100vh;
+   
+  }
+  .nextProject {
+    bottom: 30px;
+    right: 30px;
+  }
+  .openedProjectInfo {
+    width: 100%;
+    gap: 32px;
+  }
+  .projectTitle {
+    :nth-child(1) {
+      font-size: 56px;
+    }
+    :nth-child(2) {
+      font-size: 36px;
+    }
+  }
+  .openedProjectImage {
+    width: 85%;
+  }
+  .close {
+    top: 10px;
+    right: 10px;
+  }
+}
+
+@media (max-width: 750px) {
+  .projectsHeader {
+    > h1 {
+      font-size: 52px;
+    }
+  }
+  .icons {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .openedProjectImage{
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  section {
+    > div {
+      height: 100%;
+    }
+  }
+  .projectsHeader {
+    > h1 {
+      font-size: 42px;
+    }
+    > p {
+      font-size: 16px;
+    }
+  }
+  .project {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .openedProjectInfo {
+    padding-bottom: 50px;
+  }
+  .overlayButtons {
+    width: 100%;
+    gap: 20px;
+  }
+  .openedProjectImage {
+    width: 100%;
+
+  }
+  .overlay {
+    padding: 40px 16px;
+    gap: 0px;
+    width: 98vw;
+  }
+}
+
+@media (max-width: 500px) {
+  section{
+    padding: 16px 16px 60px 16px;
+  }
+  .projectsHeader {
+    > h1 {
+      font-size: 36px;
+    }
+    > p {
+      font-size: 16px;
+    }
+  }
+  .project {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+    > :nth-child(2) {
+      gap: 2px;
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width:350px){
+  .overlayButtons{
+    >a{
+      font-size: 16px;
+      padding: 12px 18px;
+    }
+  }
+}
+
+@media (max-height:799px){
+  .overlay{
+    height: 100vh;
+  }
+}
+
+@media (max-height:721px) and (max-width:541px){
+  .overlay{
+    height: 130vh;
+  }
+}
+

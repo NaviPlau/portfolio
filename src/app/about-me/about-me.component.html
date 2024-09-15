@@ -1,0 +1,43 @@
+<section>
+  <div class="container">
+    <div class="imgContainer">
+      <div class="background-image"></div>
+      <div class="stripe-overlay"></div>
+    </div>
+    <div class="aboutText">
+      <span>{{ currentLanguage === 'EN' ? 'Who I am' : 'Wer ich bin' }}</span>
+      <div class="textContainer">
+        <h2>{{ currentLanguage === 'EN' ? 'About me' : 'Über mich' }}</h2>
+        <p>
+          {{ currentLanguage === 'EN' ? 
+            "Hi, I’m a German/English/Romanian - speaking Frontend Developer based in Madaras Hungary. The constant evolution of technology fascinates me, and I am eager to contribute to the IT field by developing reliable and scalable solutions that meet modern demands." : 
+            "Hallo, ich bin ein deutsch/englisch/rumänisch sprechender Frontend-Entwickler mit Sitz in Madaras Ungarn. Die ständige Weiterentwicklung der Technologie fasziniert mich, und ich bin begierig darauf, einen Beitrag zum IT-Bereich zu leisten, indem ich zuverlässige und skalierbare Lösungen entwickle, die den modernen Anforderungen entsprechen." }}
+        </p>
+        <div class="infos">
+          <img src="assets/img/about/location.png" alt="" />
+          <p>
+            {{ currentLanguage === 'EN' ? 
+              "Due to my location, I work remotely, but I actively use online platforms to stay informed, collaborate efficiently and help shape the success of the team" : 
+              "Aufgrund meines Standorts arbeite ich aus der Ferne, aber ich nutze aktiv Online-Plattformen, um auf dem Laufenden zu bleiben, effizient zusammenzuarbeiten und den Erfolg des Teams mitzugestalten" }}
+          </p>
+        </div>
+        <div class="infos">
+          <img width="32px" height="33px" src="assets/img/about/brainImg.png" alt="" />
+          <p>
+            {{ currentLanguage === 'EN' ? 
+              "I view each challenge as an opportunity to learn and work diligently to improve my technical knowledge and flexibility in the IT environment" : 
+              "Ich betrachte jede Herausforderung als Gelegenheit zum Lernen und arbeite intensiv daran, mein technisches Wissen und meine Flexibilität im IT-Umfeld weiter zu entwickeln" }}
+          </p>
+        </div>
+        <div class="infos">
+          <img src="assets/img/about/paragraphImg.png" alt="" />
+          <p>
+            {{ currentLanguage === 'EN' ? 
+              "For me, programming is more than just writing code. It's about solving problems creatively. I enjoy turning complex challenges into easy, user-friendly solutions to help you achieve your goals." : 
+              "Für mich ist Programmieren mehr als nur Code schreiben—es geht darum, Probleme kreativ zu lösen. Ich habe Freude daran, komplexe Herausforderungen in einfache, benutzerfreundliche Lösungen zu verwandeln, um Ihre Ziele zu erreichen." }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

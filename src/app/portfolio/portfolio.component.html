@@ -1,0 +1,114 @@
+<section #sectionWrapper >
+  <div>
+    <div class="leftSide" (click)="onOverlayClick($event)">
+      <span>Portfolio</span>
+      <div class="projectsHeader">
+        <h1>{{ currentLanguage === 'EN' ? 'Featured Projects' : 'Besondere Projekte.'}}</h1>
+        <p>
+          {{ currentLanguage === 'EN' ? 'Explore a selection of my work here - Interact with ' : 'Entdecken Sie hier eine Auswahl meiner Arbeiten - Interagieren Sie mit'}}
+          <br>
+          
+          {{ currentLanguage === 'EN' ? 'Projects to see my skills in action.' : 'Projekte, um meine Fähigkeiten in Aktion zu sehen.'}}
+        </p>
+      </div>
+      <div class="projects">
+        <div
+          class="project"
+          (mouseover)="hoveredProject = 'join'"
+          (mouseleave)="hoveredProject = ''"
+          (click)="selectedProject = 'join'">
+          <span>
+            Join <img src="assets/img/projects/arrow_outward.png" alt=""/>
+          </span>
+          <span>
+            JavaScript<b>|</b> HTML <b>|</b> CSS <b>|</b> Firebase
+          </span>
+        </div>
+      
+        <div
+          class="project"
+          (mouseover)="hoveredProject = 'elPolloloco'"
+          (mouseleave)="hoveredProject = ''"
+          (click)="selectedProject = 'elPolloloco'">
+          <span>
+            El PolloLoco <img src="assets/img/projects/arrow_outward.png" alt=""/>
+          </span>
+          <span>
+            JavaScript <b>|</b> HTML <b>|</b> CSS
+          </span>
+        </div>
+      
+        <div
+          class="project"
+          (mouseover)="hoveredProject = 'daBubble'"
+          (mouseleave)="hoveredProject = ''"
+          (click)="selectedProject = 'daBubble'">
+          <span>
+            DA Bubble <img src="assets/img/projects/arrow_outward.png" alt=""/>
+          </span>
+          <span>
+            Angular <b>|</b> Firebase <b>|</b> TypeScript
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="projectImages">
+      <div *ngIf="hoveredProject === 'join'">
+        <div class="imgContainer">
+          <div class="background-image"></div>
+          <div class="stripe-overlay"></div>
+        </div>
+      </div>
+      <div *ngIf="hoveredProject === 'elPolloloco'">
+        <div class="imgContainer" style="top: 65%; transform: translate(-50%, 55%);">
+          <div class="background-image1"></div>
+          <div class="stripe-overlay"></div>
+        </div>
+      </div>
+      <div *ngIf="hoveredProject === 'daBubble'">
+        <div class="imgContainer" style="top: 70%; transform: translate(-50%, 60%);">
+          <div class="background-image2"></div>
+          <div class="stripe-overlay"></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="overlay" *ngIf="selectedProject && projectsData[selectedProject]">
+      <div class="close" (click)="closeOverlay()"></div>
+      <div class="nextProject" (click)="goToNextProject()">
+        <span>{{ currentLanguage === 'EN' ? 'Next project' : 'Nächstes Projekt'}}</span>
+        <img src="assets/img/projects/overlay/nextArrow.png" alt="Next Project">
+      </div>
+      <div class="openedProjectInfo">
+        <div class="projectTitle">
+          <h1>{{ projectsData[selectedProject][currentLanguage].number }}</h1>
+          <h1>{{ projectsData[selectedProject][currentLanguage].title }}</h1>
+        </div>
+        <div class="projectAbout">
+          <h1>{{ currentLanguage === 'EN' ? 'What is this project about?' : 'Worum geht es bei diesem Projekt?' }}</h1>
+          <p>{{ projectsData[selectedProject][currentLanguage].description }}</p>
+        </div>
+        <div class="icons">
+          <div *ngFor="let icon of projectsData[selectedProject][currentLanguage].icons" class="eachIcon">
+            <img [src]="getIconImage(icon)" alt="">
+            <span>{{ icon }}</span>
+          </div>
+        </div>
+        <div class="overlayButtons">
+          <a [href]="projectsData[selectedProject][currentLanguage].githubLink" target="_blank">
+            <span>GitHub</span>
+            <div><img src="assets/img/projects/overlay/blueArrow.png" alt=""></div>
+          </a>
+          <a [href]="projectsData[selectedProject][currentLanguage].liveLink" target="_blank">
+            <span>Live Test</span>
+            <div><img src="assets/img/projects/overlay/blueArrow.png" alt=""></div>
+          </a>
+        </div>
+      </div>
+      <div class="openedProjectImage">
+        <img [src]="projectsData[selectedProject][currentLanguage].image" alt="Project Image">
+      </div>
+    </div>
+  </div>
+</section>

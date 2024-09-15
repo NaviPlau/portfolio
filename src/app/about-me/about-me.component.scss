@@ -1,0 +1,142 @@
+@import "../../styles.scss";
+
+section {
+  background-color: #1c1c1c;
+  height: 100%;
+  position: relative;
+  @include display(row, center);
+  >.container{
+    position: relative;
+    color: white;
+    max-width: 1440px;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    gap: 30px;
+    padding: 48px 0px;
+    @include display(row, space-between);
+    >.aboutText{
+      margin: 0;
+      width: 50%;
+      align-self: flex-end;
+      >span{
+        font-family: "karla";
+        font-size: 24px;
+        color: $blue;
+      }
+    }
+  }
+  
+}
+
+.textContainer{
+  font-family: 'karla', 'sans-serif';
+  border: 1px solid $blue;
+  font-size: 18px;
+  background-color: $blue-hover;
+  padding: 20px;
+  border-radius: 30px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  >h2{
+    font-family: 'fira';
+    font-size: 64px;
+    margin: 0;
+    color: $blue;
+  }
+}
+
+.infos{
+  @include display(row, center);
+  gap: 10px;
+  >img{
+    align-self: flex-start;
+    margin: 0;
+  }
+}
+
+.stripe-overlay {
+  border-radius: 30px;
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  width: 97%;
+  height: 97%;
+  background: repeating-linear-gradient(
+    45deg,
+    $blue-hover 0,
+    $blue 2px,
+    transparent 2px,
+    transparent 16px
+  );
+  z-index: 1;
+}
+
+.imgContainer{
+  position: relative;
+  width: 50%;
+  min-width: 200px;
+  min-height: 500px;
+  height: 70%;
+}
+
+.background-image{
+  border-radius: 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 97%;
+  height: 97%;
+  background-image: url('../../assets/img/about/profile.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: 3;
+}
+
+@media (max-width: 950px){
+  section{
+    >.container{
+      padding: 30px 0px;
+      flex-direction: column;
+      >.aboutText{
+        width: 100%;
+        
+      }
+    }
+  }
+  .background-image {
+    background-position: center 0px;
+    width:100%;
+    height: 100%;
+  }
+ .imgContainer{
+    width: 100%;
+    height: 100%;
+ }
+
+ .textContainer{
+  font-size: 16px;
+ }
+  
+}
+
+@media (max-height:700px) and (min-width:850px){
+  .textContainer{
+    >h2{
+      font-size: 56px;
+    }
+  }
+  .imgContainer{
+    width: 40%;
+  }
+  section{
+    >.container{
+      >.aboutText{
+        width: 55%;
+      }
+    }
+  }
+}
+

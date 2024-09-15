@@ -1,0 +1,300 @@
+@import '../../styles.scss';
+
+section {
+  background-color: #1C1C1C;
+  width: 100vw;
+  height: fit-content;
+  padding-bottom: 10vh; 
+  max-width: 100%;
+  color: white;
+  position: relative; 
+  @include display(row, center);
+  align-items: flex-start;
+  &::before {
+    color: rgb(28, 28, 28);
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 30%; 
+    height: 90%; 
+    background: radial-gradient(circle, 
+                rgba(8, 70, 59, 0.3), 
+                rgba(28, 28, 28, 0) 70%);
+    z-index: 0; 
+  }
+  > div {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0;
+    @include display(row, space-between);
+    align-items: flex-start;
+    position: relative; 
+    z-index: 2;
+  }
+}
+
+.leftSide{
+  @include display(column, space-between);
+  align-items: flex-start;
+  width:40%;
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  padding: 20px 20px 20px 0px;
+  >span{
+    font-size: 24px;
+    color: $blue;
+    font-family: 'karla';
+    margin: 0;
+  }
+}
+
+.skillSet{
+  @include display(column, center);
+  align-items: flex-start;
+  background-color: $blue-hover;
+  border: 1px solid $blue;
+  padding: 20px;
+  border-radius: 30px;
+  margin-top: 20px;
+  gap: 40px;
+  >h1{
+    font-size: 64px;
+    color: $blue;
+    font-family: 'fira';
+  }
+  >p{
+    font-family: 'karla';
+    font-size: 18px;
+  }
+}
+
+.anotherSkill{
+  width: 100%;
+  @include display(column, center);
+  align-items: flex-start;
+  gap: 16px;
+  >h3{
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: 'fira';
+    >span{
+      color: $blue;
+    }
+  }
+  >p{
+    font-family: 'karla';
+    font-size: 18px;
+  }
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 18px;
+  color: white;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 100px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: border 125ms;
+  margin: 0;
+  font-family:'karla';
+}
+
+button:hover {
+  border: 1px solid $blue;
+}
+
+button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+}
+
+button:hover span {
+  animation: slideOutAndIn 3s linear infinite;
+}
+
+.rightSide{
+  width: 40%;
+  display: flex;
+  margin: 0;
+  flex-wrap: wrap;
+  height: 100%;
+  padding-top: 60px;
+  gap: 15%;
+  position: relative;
+  >:nth-child(11){
+    &:hover{
+      color: $blue;
+      transition: 125ms;
+    }
+  }
+}
+
+.skill-container {
+  position: relative; 
+  z-index: 2;
+  margin: 0;
+  @include display(column, center);
+  width: 70px;
+  font-size: 18;
+  margin-bottom: 60px;
+  > div {
+    text-align: center;
+    > img {
+      width: 64px;
+      height: 64px;
+      &:hover {
+        scale: 1.1;
+        transition: 125ms;
+      }
+    }
+    > p {
+      font-family: 'karla';
+      text-align: center;
+      text-wrap: wrap;
+    }
+  }
+}
+
+.newSkills {
+  position: absolute; 
+  top: -130px; 
+  left:100%;
+  transform: translateX(-48%);
+  z-index: 100;
+  color: $blue;
+  background-image: url('/assets/img/skills/popUp.png');
+  background-size: cover;
+  width: 200px;
+  height: 140px;
+  border-radius: 30px;
+  display: none;
+  padding: 0px 10px;
+  font-family: 'karla';
+  > div {
+    @include display(column, center);
+    text-align: center;
+    gap: 10px;
+    padding-top: 10px;
+    > .newImages {
+      @include display(row, center);
+      gap: 10px;
+      margin: 0px;
+    }
+  }
+}
+
+.skill-container:nth-child(11):hover .newSkills {
+  display: block;
+  transition: 125ms;
+  animation: fadeIn 0.5s forwards;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width:1120px){
+  section{
+    padding-bottom: 30px;
+    padding-top: 30px;
+    height: fit-content;
+    &::before {
+      color: rgb(28, 28, 28);
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%; 
+      height: 70%; 
+      background: radial-gradient(circle, 
+                  rgba(8, 70, 59, 0.3), 
+                  rgba(28, 28, 28, 0) 70%);
+      z-index: 0; 
+    }
+    >div{
+      flex-direction: column;
+    }
+  }
+  .leftSide, .rightSide{
+    width: 100%;
+    padding: 0;
+  }
+  .rightSide{
+    gap: 32px;
+    padding: 40px 0 0 0;
+  }
+  .skill-container{
+    margin-bottom: 30px;
+  }
+}
+
+@media(max-width: 500px){
+  .skillSet{
+    gap: 24px;
+    >h1{
+      font-size: 36px;
+    }
+    >p{
+      font-size: 16px;
+    }
+  }
+  .skill-container{
+    >div{
+      >img{
+        width: 54px;
+        height: 54px;
+      }
+    }
+    
+  }
+  .anotherSkill{
+    >h3{
+      font-size: 17px;
+    }
+    >p{
+      font-size: 16px;
+    }
+  }
+  .rightSide{
+    justify-content: center;
+    gap: 10px;
+    padding: 40px 0 0 0;
+  }
+}
+
+@media(max-width: 450px){
+  .rightSide{
+    justify-content: flex-start;
+  }
+}
+@media(max-width: 400px){
+  .rightSide{
+    justify-content: flex-start;
+  }
+}
+
+@media(max-width: 360px){
+  .rightSide{
+    justify-content: flex-start;
+    gap: 30px;
+  }
+}
+
+@media (pointer: coarse) {
+  button span {
+    animation: slideOutAndIn 3s linear infinite;
+  }
+}

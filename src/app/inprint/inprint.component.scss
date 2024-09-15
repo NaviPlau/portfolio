@@ -1,0 +1,37 @@
+@import '../../styles.scss';
+
+section{
+  width:100vw;
+  max-width: 100%;
+  background-color: #1c1c1c;
+  height: 90vh;
+  color: white;
+  @include display(column, center);
+  align-items: center;
+  font-size: 18px;
+  font-family: 'karla';
+  >div{
+    margin-top: 100px;
+    width:100%;
+    max-width: 1440px;
+    @include display(column, flex-start);
+    align-items: flex-start;
+    gap: 20px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    >h1{
+      color: $blue;
+      font-family: 'fira';
+      font-size: 60px;
+    }
+  }
+}
+
+strong{
+  font-family: 'fira';
+  color: $blue;
+}
+
+
+
+

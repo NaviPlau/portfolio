@@ -1,0 +1,300 @@
+@import "../../styles.scss";
+section{
+  background-image: url("../../assets/img/hero/hero-background.png");
+  background-size: cover;
+  width: 100vw;
+  max-width: 100%;
+  height: 100vh;
+  @include display(column, center);
+  overflow: hidden;
+>div {
+  height: 100%;
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  @include display(column, center);
+  text-align: center;
+  > header {
+    max-width: 1440px;
+    @include display(column, center);
+    gap: 12px;
+    color: white;
+    > span {
+      font-family: "fira";
+      font-weight: 400;
+      font-size: 40px;
+    }
+    > h1 {
+      font-family: "karla";
+      font-size: 128px;
+    }
+  }
+}
+}
+
+.header{
+  position: absolute;
+  top: 0px;
+  margin: auto;
+  max-width: 1440px;
+  width: 100%;
+}
+
+.buttons{
+  @include display(row, center);
+  gap: 48px;
+}
+
+.slide-button {
+  padding: 12px 24px;
+  font-size: 18px;
+  color: white;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 100px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: border 125ms;
+  font-family: 'karla';
+}
+
+.slide-button:hover {
+  border: 1px solid $blue;
+}
+
+.slide-button span {
+  display: inline-block;
+  position: relative;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+}
+
+.slide-button:hover span {
+  animation: slideOutAndIn 3s linear infinite;
+}
+
+.infoSlider {
+  position: absolute;
+  color: $blue; 
+  transform: skewY(-3deg);
+  bottom: 60px;
+  background-color: $blue-hover;
+  max-width: 100vw; 
+  z-index: 9999;
+  backdrop-filter: blur(1px);
+  font-size: 32px;
+  font-family: 'karla';
+}
+
+.content {
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  animation: scrollText 13s linear infinite;
+}
+
+.content > span {
+  white-space: nowrap; 
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: #00bcd4;
+  border-radius: 50%;
+  border: 5px solid $blue; 
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(100%); 
+  }
+  100% {
+    transform: translateX(-100%); 
+  }
+}
+
+.leftLateral {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: 0;
+  top: 65%;
+  height: 35%;
+  gap: 20px;
+}
+
+.arrowContainer {
+  border: 1px solid $blue-hover; 
+  padding: 20px 10px;
+  border-radius: 50px;
+  position: relative;
+  margin-top: auto; 
+  margin-bottom: auto; 
+}
+
+.arrowContainer img {
+  position: relative;
+  animation: arrowDown 1s infinite ease-in-out;
+}
+
+@keyframes arrowDown {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(5px); 
+  }
+  50% {
+    transform: translateY(10px); 
+  }
+  75% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0); 
+  }
+}
+
+.leftLine {
+  width: 1px;
+  background-color: $blue-hover; 
+  height: 100%;
+}
+
+.rightLateral {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 50vh;
+}
+
+.email {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  cursor: pointer;
+  color: #fff;
+  font-family: 'karla';
+  margin-bottom: 20px; 
+}
+
+.contactImages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; 
+  margin-bottom: 10px; 
+}
+
+.contactImages a {
+  position: relative;
+}
+
+.contactImages a img {
+  width: 32px;
+}
+
+.contactImages a:hover img {
+  cursor: pointer;
+  content: url('../../assets/img/hero/githubHover.png'); 
+}
+
+.contactImages a:nth-child(2):hover img {
+  cursor: pointer;
+  content: url('../../assets/img/hero/linkedInHover.png'); 
+}
+
+.contactImages a::before {
+  content: '•'; 
+  position: absolute;
+  right: -15px; 
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: $blue; 
+  opacity: 0; 
+}
+
+.contactImages a:hover::before {
+  opacity: 1; 
+}
+
+.line {
+  position: relative;
+  bottom: 0;
+  height: 100%; 
+  width: 1px;
+  background-color: #fff; 
+}
+
+@media (max-width:700px){
+  .leftLateral{
+    height: 30%;
+    top: 75%;
+  }
+  .rightLateral{
+    height: 30%;
+  }
+  .email{
+    display: none;
+  }
+  section{
+    >div{
+      > header{
+        margin-left: 0px;
+        margin-right: 0px;
+        >h1{
+          font-size: 100px;
+        }
+        >span{
+          font-size: 32px
+        };
+      }
+    }
+  }
+}
+
+@media (max-width:500px){
+  section{
+    >div{
+      > header{
+        margin-left: 0px;
+        margin-right: 0px;
+        >h1{
+          font-size: 58px;
+        }
+        >span{
+          font-size: 16px
+        };
+      }
+    }
+  }
+  .arrowContainer{
+    padding: 5px 5px 20px;
+  }
+  .buttons{
+    gap: 20px;
+   
+  }
+  .slide-button{
+    padding: 12px 12px;
+    font-size: 14px;
+  }
+  .content{
+    gap: 10px;
+    font-size: 16px;
+  }
+}
+
+@media (pointer: coarse) {
+  .slide-button span {
+    animation: slideOutAndIn 3s linear infinite;
+  }
+}

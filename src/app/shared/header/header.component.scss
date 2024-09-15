@@ -1,0 +1,220 @@
+@import "../../../styles.scss";
+
+section {
+  font-family: "fira";
+  @include display(row, space-between);
+  padding: 48px 0px;
+  left: 50%;
+  transform: translate(-50%);
+  width: 100%;
+  max-width: 1440px;
+  position: absolute;
+  top: 0px;
+  z-index: 22;
+  height: 120px;
+  > nav {
+    @include display(row, flex-start);
+    gap: 24px;
+    margin-left: 0px;
+    > a {
+      padding: 0;
+      cursor: pointer;
+    }
+  }
+}
+
+.hover-dot {
+  position: relative;
+  color: white;
+  font-size: 20px;
+}
+
+.hover-dot::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+  width: 8px;
+  height: 8px;
+  background-color: $blue;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.125s ease-in-out;
+}
+
+.hover-dot:hover::after {
+  opacity: 1;
+}
+
+.language-switch {
+  color: $blue-hover;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  border: 1px solid $blue-hover;
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: "fira", sans-serif;
+  font-weight: bold;
+  padding: 0;
+
+  transition: 125ms;
+  position: relative;
+
+  &:hover {
+    border: 1px solid white;
+    color: $blue;
+  }
+  span {
+    padding: 5px 10px;
+    transition: 125ms;
+    position: relative;
+    cursor: pointer;
+
+    &.active {
+      background-color: $blue;
+      color: white;
+      border-radius: 100px;
+      z-index: 1;
+    }
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.initials {
+  position: relative;
+  width: 50px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  font-family: sans-serif;
+  cursor: pointer;
+}
+
+.p {
+  position: absolute;
+  left: 4.5px;
+  top: 0.5px;
+  font-size: 60px;
+  font-weight: bold;
+  color: #5cd1b9;
+  transform: rotate(90deg);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.i {
+  position: absolute;
+  left: 0px;
+  font-size: 60px;
+  font-weight: bold;
+  color: #5cd1b9;
+  transition: all 0.125s ease-in-out;
+  cursor: pointer;
+}
+
+.name {
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  transition: all 0.124s ease-in-out;
+  font-family: sans-serif;
+  margin-top: -8px;
+  line-height: 30px;
+  align-self: center;
+  cursor: pointer;
+}
+
+.name span {
+  color: white;
+  cursor: pointer;
+}
+
+.logo:hover .initials {
+  color: transparent;
+}
+
+.logo:hover .p,
+.logo:hover .i {
+  color: transparent;
+  -webkit-text-stroke: 1px #5cd1b9;
+}
+
+.logo:hover .name {
+  color: transparent;
+  -webkit-text-stroke: 1px #5cd1b9;
+}
+
+.logo:hover .name span {
+  color: transparent;
+  -webkit-text-stroke: 1px #5cd1b9;
+}
+
+
+.menu{
+  display: none;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  background-color: $blue-hover;
+  border-radius: 10px;
+}
+
+@media (max-width: 1460px) {
+  section {
+    padding: 0px 30px;
+  }
+}
+
+@media (max-width: 700px) {
+  section {
+    padding: 0px 10px;
+
+    > nav {
+      display: none; 
+      position: fixed;
+      top: 100px;
+      right: 20px;
+      background-image: url(../../../assets/img/hero/hero-background.png);
+      background-size: cover;
+      margin: 0;
+      gap: 20px;
+      width: 200px;
+      padding: 30px 30px;
+      border-radius: 20px;
+      border: 2px $blue solid;
+    }
+
+    .visible-nav {
+      display: flex; 
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+  }
+
+  .name {
+    display: none;
+  }
+
+  .menu {
+    display: flex;
+  }
+
+  
+}
+
+
+
+
+

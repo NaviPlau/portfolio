@@ -1,0 +1,105 @@
+@mixin display($direction, $justif,){
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: $justif;
+}
+$blue:#3DCFB6;
+$blue-hover: hsla(170, 60%, 53%, 0.302);
+
+
+@font-face {
+  font-family: "fira";
+  src: url("assets/fonts/FiraCode-Regular.ttf");
+}
+
+@font-face {
+  font-family: "karla";
+  src: url("assets/fonts/Karla-Regular.ttf");
+}
+
+*{
+  box-sizing: border-box;
+  cursor: default;
+  margin: auto;
+  scroll-behavior: smooth;
+}
+
+
+p, span, div, h1, body, img, b, form, label, button, a, ul{
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+  width: 8px; 
+  height: 8px; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $blue-hover;
+  border-radius: 10px; 
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1; 
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+
+
+@keyframes slideOutAndIn {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+    color: $blue;
+  }
+  25% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  75% {
+    opacity: 1;
+    transform: translateX(0);
+    color: $blue-hover;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+    color: $blue;
+  }
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px rgba(0,0,0,0) inset !important; 
+  box-shadow: 0 0 0px 1000px rgba(0,0,0,0) inset !important;       
+  -webkit-text-fill-color: #fff !important;                         
+  transition: background-color 5000s ease-in-out 0s;                
+}
+
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px rgba(0,0,0,0) inset !important; 
+  box-shadow: 0 0 0px 1000px rgba(0,0,0,0) inset !important;        
+  -webkit-text-fill-color: #fff !important;                         
+
+}
+
+@media  (max-width:1460px) {
+  section{
+    padding: 0px 32px;
+  }
+}
+@media (max-width:500px){
+  section{
+    padding: 0px 16px;
+  }
+}
+

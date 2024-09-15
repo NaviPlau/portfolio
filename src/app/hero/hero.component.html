@@ -1,0 +1,105 @@
+<section>
+  <div>
+    <header>
+      <span>Frontend Developer</span>
+      <h1>Paul Ivan</h1>
+      <div class="buttons">
+        <a href="#projects"
+          ><button class="slide-button">
+            <span>{{
+              selectedLanguage === "EN" ? "Check my work" : "Meine Projekte"
+            }}</span>
+          </button></a
+        >
+        <a href="#contact"
+          ><button class="slide-button">
+            <span
+              >{{
+                selectedLanguage === "EN" ? "Contact me" : "Kontakt aufnehmen"
+              }}
+            </span>
+          </button></a
+        >
+      </div>
+    </header>
+    <div class="infoSlider">
+      <div class="content">
+        <div class="dot"></div>
+        <span>Frontend Developer</span>
+        <div class="dot"></div>
+        <span>{{
+          selectedLanguage === "EN"
+            ? "Available only for remote work"
+            : "Nur für Remote-Arbeit verfügbar"
+        }}</span>
+        <div class="dot"></div>
+        <span>{{
+          selectedLanguage === "EN"
+            ? "Open to work"
+            : "Interessiert an neuen beruflichen Aufgaben"
+        }}</span>
+        <div class="dot"></div>
+        <span>{{
+          selectedLanguage === "EN"
+            ? "Based in Madaras Hungary"
+            : "Mit Standort Madaras Ungarn"
+        }}</span>
+        <div class="dot"></div>
+        <span>Frontend Developer</span>
+        <div class="dot"></div>
+        <span>{{
+          selectedLanguage === "EN"
+          ? "Based in Madaras Hungary"
+            : "Mit Standort Madaras Ungarn"
+        }}</span>
+        <div class="dot"></div>
+        <span>{{
+          selectedLanguage === "EN"
+            ? "Open to work"
+            : "Interessiert an neuen beruflichen Aufgaben"
+        }}</span>
+        <div class="dot"></div>
+        <span>{{
+          selectedLanguage === "EN"
+            ? "Available only for remote work"
+            : "Nur für Remote-Arbeit verfügbar"
+        }}</span>
+        <div class="dot"></div>
+        <span>Frontend Developer</span>
+        <div class="dot"></div>
+        <span>{{
+          selectedLanguage === "EN"
+            ? "Based in Madaras Hungary"
+            : "Mit Standort Madaras Ungarn"
+        }}</span>
+        <div class="dot"></div>
+        <span>{{
+          selectedLanguage === "EN"
+            ? "Open to work"
+            : "Interessiert an neuen beruflichen Aufgaben"
+        }}</span>
+        <div class="dot"></div>
+        <span>{{
+          selectedLanguage === "EN"
+            ? "Available only for remote work"
+            : "Nur für Remote-Arbeit verfügbar"
+        }}</span>
+        <div class="dot"></div>
+      </div>
+    </div>
+    <div class="leftLateral">
+      <div class="arrowContainer">
+        <img src="assets/img/hero/downArrow.png" alt="" />
+      </div>
+      <div class="leftLine"></div>
+    </div>
+    <div class="rightLateral">
+      <div class="email" (click)="mailTo()">naviplau&#64;outlook.com</div>
+      <div class="contactImages">
+        <a href="https://github.com/NaviPlau?tab=repositories" target="_blank"><img src="assets/img/hero/github.png" alt="" /></a>
+        <a href="https://www.linkedin.com/in/paul-ivan-a87585328/" target="_blank"><img src="assets/img/hero/linkedIn.png" alt="" /></a>
+      </div>
+      <div class="line"></div>
+    </div>
+  </div>
+</section>

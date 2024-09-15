@@ -1,0 +1,21 @@
+
+
+
+
+
+
+@if(isLandscape){
+  <div class="landscape-warning">
+    <p>{{ currentLanguage === 'EN' ? 'Please rotate your device to portrait mode for the best experience.' : 'Bitte drehen Sie Ihr Gerät in den Hochformatmodus, um die besten Ergebnisse zu erzielen.' }}</p>
+  </div>
+}
+
+
+
+
+<div *ngIf="!isLandscape" class="portrait-only-content">
+  <app-header></app-header>
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
+  <div *ngIf="!isTouchDevice" class="cursor-shadow"></div>
+</div>

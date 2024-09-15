@@ -1,0 +1,29 @@
+<section>
+  <div>
+    <div>
+      <a href="#">
+        <div class="logo">
+          <div class="initials">
+            <div class="p">P</div>
+            <div class="i">I</div>
+          </div>
+          <div class="name">Paul <br> <span>Ivan</span></div>
+        </div>
+      </a>
+      <div class="info">
+        <span>Web Developer</span>
+        <span>{{ currentLanguage === 'EN' ? 'Linz Austria' : 'Linz Österreich' }}</span>
+      </div>
+    </div>
+    <div class="copyright"> <span>&#xa9;</span> Ivan Paul 2024</div>
+    <div class="links">
+      <a href="https://github.com/NaviPlau?tab=repositories" target="_blank">Github </a>
+      <a href="https://www.linkedin.com/in/paul-ivan-a87585328/" target="_blank">LinkedIn</a>
+      <a (click)="mailTo()">Email</a>
+      <a href="inprint">{{ currentLanguage === 'EN' ? 'Imprint' : 'Impressum' }}</a>
+    </div>
+  </div>
+</section>
+
+ 
+

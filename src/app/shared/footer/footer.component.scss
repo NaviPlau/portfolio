@@ -1,0 +1,179 @@
+@import '../../../styles.scss';
+
+section{
+  position: relative;
+  width: 100vw;
+  max-width: 100%;
+  height: 200px;
+  background-color: #1c1c1c;
+  @include display(row, center);
+  color: white;
+  >div{
+    position: relative;
+    width: 100%;
+    max-width: 1440px;
+    height: 100%;
+    overflow: hidden;
+    @include display(row, space-between);
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer
+}
+
+.initials {
+  position: relative;
+  width: 50px;
+  height: 100px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  font-family: sans-serif;
+  cursor: pointer
+}
+
+.p {
+  position: absolute;
+  left: 4.5px;
+  top: 0.5px;
+  font-size: 60px;
+  font-weight: bold;
+  color: #5cd1b9;
+  transform: rotate(90deg);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer
+}
+
+.i {
+  position: absolute;
+  left: 0px;
+  font-size: 60px;
+  font-weight: bold;
+  color: #5cd1b9;
+  transition: all 0.125s ease-in-out;
+  cursor: pointer
+}
+
+.name {
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  transition: all 0.124s ease-in-out;
+  font-family: sans-serif;
+  margin-top: -8px;
+  line-height: 30px;
+  align-self: center;
+  cursor: pointer
+}
+
+.name span {
+  color: white; 
+  cursor: pointer
+}
+
+.logo:hover .initials {
+  color: transparent; 
+}
+
+.logo:hover .p, .logo:hover .i {
+  color: transparent;
+  -webkit-text-stroke: 1px #5cd1b9;
+}
+
+.logo:hover .name {
+  color: transparent; 
+  -webkit-text-stroke: 1px #5cd1b9; 
+}
+
+.logo:hover .name span {
+  color: transparent; 
+  -webkit-text-stroke: 1px #5cd1b9; 
+}
+
+
+.info{
+  @include display(column, flex-start);
+  align-items: flex-start;
+  gap: 8px;
+  font-family: 'karla';
+  font-size: 16px;
+}
+
+
+.links{
+  @include display(column, flex-start);
+  gap: 8px;
+  width: 85px;
+  align-items: flex-start;
+}
+
+
+
+.links a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease;
+  font-size: 16px;
+  font-family: 'karla';
+}
+
+.links a::before {
+  content: '';
+  position: absolute;
+  left: -12px; 
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background-color: transparent; 
+  border-radius: 50%;
+  transition: background-color 0.125s ease-in-out;
+}
+
+.links a:hover {
+  color: $blue;
+  cursor: pointer;
+}
+
+.links a:hover::before {
+  background-color: $blue
+}
+
+.copyright{
+  font-size: 18px;
+  height: 30px;
+  @include display(row, center);
+  gap: 10px;
+  font-family: 'fira';
+  color: $blue;
+  >:nth-child(1){
+    align-self: flex-start;
+  }
+}
+
+
+@media (max-width:700px){
+  .copyright{
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+    transform: translate(-50%);
+    text-wrap: nowrap;
+  }
+  .logo{
+    margin-top: -16px;
+  }
+  section{
+    padding-top: 30px;
+    >div{
+      align-items: flex-start;
+    }
+  }
+}

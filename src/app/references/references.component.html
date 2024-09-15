@@ -1,0 +1,68 @@
+<section>
+  <div>
+    <span>
+      {{ currentLanguage === "EN" ? "What my colleagues say about me"
+       : "Was sagen meine Kollegen über mich" }}
+    </span>
+    <div class="slider">
+      <div class="slider-container">
+        <!-- Left slider item -->
+        <div class="slider-item left">
+          <p class="text">{{ getCurrentReferences()[(currentIndex - 1 + getCurrentReferences().length) % getCurrentReferences().length].text }}</p>
+          <p>
+            <span></span>
+            <b>{{ getCurrentReferences()[(currentIndex - 1 + getCurrentReferences().length) % getCurrentReferences().length].author }} - 
+            {{ getCurrentReferences()[(currentIndex - 1 + getCurrentReferences().length) % getCurrentReferences().length].position }}</b>
+          </p>
+        </div>
+        
+        <!-- Center slider item -->
+        <div class="slider-item center"
+             [ngClass]="{
+               'translate-shadow-right': isMovingRight,
+               'translate-shadow-left': isMovingLeft,
+               'box-shadow': isPrevHovered
+             }">
+          <p class="text">{{ getCurrentReferences()[currentIndex].text }}</p>
+          <p>
+            <span></span>
+            <b>{{ getCurrentReferences()[currentIndex].author }} - 
+            {{ getCurrentReferences()[currentIndex].position }}</b>
+          </p>
+        </div>
+        
+        <!-- Right slider item -->
+        <div class="slider-item right">
+          <p class="text">{{ getCurrentReferences()[(currentIndex + 1) % getCurrentReferences().length].text }}</p>
+          <p>
+            <span></span>
+            <b>{{ getCurrentReferences()[(currentIndex + 1) % getCurrentReferences().length].author }} - 
+            {{ getCurrentReferences()[(currentIndex + 1) % getCurrentReferences().length].position }}</b>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="buttons">
+    <img (mouseenter)="addBoxShadow()"
+         (mouseleave)="removeBoxShadow()"
+         (click)="goToNext()"
+         class="next"
+         src="assets/img/references/arrowWhiteLeft.png"
+         alt="Next">
+
+    <div class="dots">
+      <span *ngFor="let reference of getCurrentReferences(); let i = index"
+            [ngClass]="{'active-dot': i === currentIndex}"
+            class="dot"></span>
+    </div>
+
+    <img (mouseenter)="addBoxShadow()"
+         (mouseleave)="removeBoxShadow()"
+         (click)="goToPrevious()"
+         class="prev"
+         src="assets/img/references/arrowWhiteRight.png"
+         alt="Previous">
+  </div>
+</section>

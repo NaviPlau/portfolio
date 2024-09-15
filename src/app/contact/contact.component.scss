@@ -1,0 +1,405 @@
+@import "../../styles.scss";
+
+section {
+  position: relative;
+  width: 100vw;
+  max-width: 100%;
+  background-color: #1c1c1c;
+  @include display(row, center);
+  > div {
+    position: relative;
+    width: 100%;
+    max-width: 1440px;
+    height: 100%;
+    overflow: hidden;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    @include display(row, space-between);
+    gap: 30px;
+    align-items: flex-start;
+    > h1 {
+      color: $blue;
+      font-size: 32px;
+      font-family: "fira";
+    }
+  }
+}
+
+.leftSide {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 40px;
+  height: 100%;
+  > :nth-child(1) {
+    color: $blue;
+    font-family: "karla";
+    font-size: 24px;
+  }
+  > h1 {
+    font-size: 64px;
+    font-family: "fira";
+    color: $blue;
+  }
+}
+
+.solvingProblem {
+  @include display(column, flex-start);
+  align-items: flex-start;
+  gap: 16px;
+  > :nth-child(1) {
+    font-size: 24px;
+    font-family: "fira";
+    color: $blue;
+  }
+  > :nth-child(2) {
+    color: white;
+    font-size: 18px;
+    font-family: "karla";
+  }
+  > :nth-child(3) {
+    @include display(row, flex-start);
+    color: white;
+    font-size: 18px;
+    font-family: "karla";
+    gap: 10px;
+    > p {
+      font-family: "fira";
+      color: $blue;
+    }
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+  justify-content: flex-start;
+  width: 50%;
+  position: relative;
+}
+
+.form-group {
+  position: relative;
+  padding: 20px;
+  border-top: 1px solid $blue;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+label {
+  color: $blue;
+  font-size: 24px;
+  font-family: "fira";
+}
+
+input,textarea {
+  width: 100%;
+  background: none;
+  border: none;
+  border-bottom: 1px solid transparent;
+  padding: 10px 0;
+  color: white;
+  font-size: 1.1rem;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+  font-size: 18px;
+  font-family: "karla";
+  &:hover {
+    cursor: pointer;
+    border-bottom: 1px solid $blue-hover;
+  }
+}
+
+input::placeholder,textarea::placeholder {
+  color: gray;
+  transition: color 0.3s ease;
+  font-size: 18px;
+  font-family: "karla";
+}
+
+input:focus,textarea:focus {
+  color: white;
+  border-bottom: 1px solid $blue;
+}
+
+textarea {
+  resize: none;
+  height: 60px;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+}
+.error {
+  position: absolute;
+  color: #ec7b7bcc;
+  font-family: "karla";
+  top: 70px;
+}
+
+.checkbox-group label a {
+  color: $blue;
+  &:hover {
+    color: white;
+    transition: 125ms;
+    cursor: pointer;
+  }
+}
+
+.checkbox-group label {
+  color: white;
+  font-size: 18px;
+  font-family: "karla";
+  cursor: pointer;
+  width: 95%;
+}
+
+button {
+  align-self: center;
+  width: fit-content;
+  padding: 12px 24px;
+  font-size: 18px;
+  color: white;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 100px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border 125ms;
+  font-family: "karla";
+  margin-top: 30px;
+  > span {
+    display: inline-block;
+    position: relative;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+  }
+}
+
+button:disabled {
+  cursor: not-allowed;
+  border-color: gray;
+}
+
+button:enabled:hover {
+  border: 1px solid $blue;
+  > span {
+    animation: slideOutAndIn 2s infinite ease-in-out;
+  }
+}
+
+.invalid-field::placeholder {
+  color: #ec7b7bcc;
+}
+
+.invalid-field {
+  border-bottom: 1px solid #f95b5b;
+}
+
+.checkbox-group input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 12px !important;
+  height: 12px !important;
+  padding-left: 20px;
+  background: transparent;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  outline: 2px solid $blue;
+  transition: all 0.2s ease-in-out;
+  padding: 0px;
+  margin: 0;
+  &:checked {
+    background: transparent;
+    border-color: $blue;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0px;
+      left: 3px;
+      width: 5px;
+      height: 10px;
+      border: solid $blue;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+  }
+  &:hover {
+    box-shadow: inset 0px 0px 8px 10px $blue-hover, 0px 0px 2px 5px $blue-hover;
+    animation: rotate3D 5s infinite linear;
+  }
+}
+
+@keyframes rotate3D {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  50% {
+    transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+.mailSuccessResponse {
+  position: absolute;
+  width: 45%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 2;
+  right: 0;
+  .hoppingBox {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: $blue;
+    border-radius: 50%;
+    animation: hop 2.5s ease-in-out forwards
+  }
+  p {
+    position: absolute;
+    opacity: 0;
+    font-size: 24px;
+    color: white;
+    color: $blue;
+    font-family: "fira";
+    text-align: center;
+    animation: showText 0.5s 3s ease-in-out forwards;
+  }
+}
+
+@keyframes hop {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  10% {
+    transform: translate(120%, -120%) scale(1.2);
+  }
+  20% {
+    transform: translate(250%, 50%) scale(0.9);
+  }
+  30% {
+    transform: translate(-180%, 200%) scale(1.1);
+  }
+  40% {
+    transform: translate(50%, -180%) scale(1);
+  }
+  50% {
+    transform: translate(180%, 250%) scale(1.2);
+  }
+  60% {
+    transform: translate(-250%, 50%) scale(0.9);
+  }
+  70% {
+    transform: translate(100%, -150%) scale(1.2);
+  }
+  80% {
+    transform: translate(0, 0) scale(1);
+  }
+  90% {
+    transform: translate(-150%, 50%) scale(1);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes splash {
+  0% {
+    width: 100px;
+    height: 100px;
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    width: 500px;
+    height: 500px;
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+@keyframes showText {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1100px) {
+  section {
+    > div {
+      flex-direction: column;
+      gap: 100px;
+    }
+  }
+  .leftSide {
+    width: 100%;
+  }
+  form {
+    width: 100%;
+  }
+  .mailSuccessResponse {
+    position: relative;
+    width: 100%;
+    height: 40vh;
+  }
+}
+
+@media (max-width: 450px) {
+  .leftSide {
+    > h1 {
+      font-size: 36px;
+    }
+    > div {
+      > :nth-child(1) {
+        font-size: 20px;
+      }
+      > :nth-child(2) {
+        font-size: 16px;
+      }
+      > :nth-child(3) {
+        font-size: 16px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  }
+  label {
+    font-size: 20px;
+  }
+  .error {
+    top: 90px;
+  }
+  .form-group {
+    padding: 20px 0px;
+  }
+  .checkbox-group {
+    padding: 20px 10px;
+    > label {
+      font-size: 16px;
+    }
+  }
+}
+
+@media (pointer: coarse) {
+  button:enabled span {
+    animation: slideOutAndIn 3s linear infinite;
+  }
+}

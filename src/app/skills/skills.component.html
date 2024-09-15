@@ -1,0 +1,51 @@
+<section>
+  <div>
+    <div class="leftSide">
+      <span>{{ currentLanguage === 'EN' ? 'Technologies' : 'Technologien' }}</span>
+      <div class="skillSet">
+        <h1>{{ currentLanguage === 'EN' ? 'Skill Set' : 'Fähigkeiten' }}</h1>
+        <p>
+          {{ currentLanguage === 'EN' ? 
+            "My experience includes working on a variety of frontend projects with different technologies. I am committed to continuously expanding my knowledge by exploring new tools and methods to stay at the forefront of web development." : 
+            "Ich habe Erfahrung mit verschiedenen Frontend-Projekten und Technologien. Ich bin entschlossen, mein Wissen kontinuierlich zu erweitern, indem ich neue Werkzeuge und Methoden erkunde, um in der Webentwicklung immer auf dem neuesten Stand zu bleiben." }}
+        </p>
+        <div class="anotherSkill">
+          <h3>{{ currentLanguage === 'EN' ? 'You need' : 'Sie brauchen' }} <span>{{ currentLanguage === 'EN' ? 'another skill?' : 'weitere Fähigkeiten?' }}</span></h3>
+          <p>
+            {{ currentLanguage === 'EN' ? 
+              "Feel free to contact me. I look forward on expanding my knowledge." : 
+              "Zögern Sie nicht, mich zu kontaktieren. Ich freue mich darauf, mein Wissen zu erweitern." }}
+          </p>
+        </div>
+        <a href="#contact"><button><span>{{ currentLanguage === 'EN' ? "Let's Talk" : "Lass uns sprechen" }}</span></button></a>
+      </div>
+    </div>
+
+    <div class="rightSide">
+      <div *ngFor="let skill of skills" class="skill-container">
+        <div>
+          <img [src]="skill.src" [alt]="skill.text" />
+          <p>{{ skill.text }}</p>
+        </div>
+      </div>
+    
+      <div class="skill-container">
+        <div>
+          <img src="assets/img/skills/skill10.png" alt="Growth Mindset">
+          <p>Growth Mindset</p>
+        </div>
+        <div class="newSkills">
+          <div>
+            {{ currentLanguage === 'EN' ? 
+              "I have a special interest in learning" : 
+              "Ich habe ein besonderes Interesse daran, zu lernen" }}<br />
+            <div class="newImages">
+              <img src="assets/img/skills/react.png" [alt]="currentLanguage === 'EN' ? 'React' : 'React'" />
+              <img src="assets/img/skills/vueJs.png" [alt]="currentLanguage === 'EN' ? 'Vue.js' : 'Vue.js'" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

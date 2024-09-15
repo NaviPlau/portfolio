@@ -1,0 +1,35 @@
+<section>
+  <nav
+    [ngClass]="{ 'visible-nav': isNavVisible }"
+    (click)="$event.stopPropagation()"
+  >
+    <button class="language-switch" (click)="toggleLanguage()">
+      <span [class.active]="selectedLanguage === 'EN'">EN</span>
+      <span [class.active]="selectedLanguage === 'DE'">DE</span>
+    </button>
+    <a class="hover-dot" href="#about">{{
+      selectedLanguage === "EN" ? "About me" : "Über mich"
+    }}</a>
+    <a class="hover-dot" href="#skills">{{
+      selectedLanguage === "EN" ? "Skills" : "Fähigkeiten"
+    }}</a>
+    <a class="hover-dot" href="#projects">{{
+      selectedLanguage === "EN" ? "Projects" : "Projekte"
+    }}</a>
+  </nav>
+  <a href="#">
+    <div class="logo">
+      <div class="initials">
+        <div class="p">P</div>
+        <div class="i">I</div>
+      </div>
+      <div class="name">
+        Paul <br />
+        <span>Ivan</span>
+      </div>
+    </div>
+  </a>
+  <div class="menu" (click)="onMenuClick($event)">
+    <img src="assets/img/header/menuWhite.png" alt="Menu" />
+  </div>
+</section>
