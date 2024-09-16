@@ -414,13 +414,14 @@ button:enabled:hover {
 .leftLateral{
   position: absolute;
   bottom: 20px;
+  transform: rotate(180deg);
   a{
     border: 1px solid $blue-hover;
-    padding: 12px 8px;
+    padding: 20px 10px;
     border-radius: 20px;
+    
     >img{
-      transform: rotate(0deg);
-      animation: arrowDown 2s infinite reverse ease;
+      animation: arrowDown 2s infinite ease;
     }
     
   }
