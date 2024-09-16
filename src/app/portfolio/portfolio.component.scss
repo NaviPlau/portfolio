@@ -119,6 +119,17 @@ section {
   width: 100%;
   height: 350px;
   overflow: hidden;
+  animation: fadein 0.7s ease-in-out;
+}
+
+@keyframes fadein{
+  0%{
+    opacity:0;
+    transform: rotate3d(1, 10, 1, 45deg);
+  }
+  100%{
+    opacity: 1;
+  }
 }
 
 .background-image,.background-image1,.background-image2 {
@@ -446,8 +457,26 @@ section {
 }
 
 @media (max-height:721px) and (max-width:541px){
-  .overlay{
-    height: 130vh;
+  section, .overlay{
+    height: 110vh;
   }
+
+  .projectTitle{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .openedProjectInfo{
+    gap: 16px;
+  }
+
+  section{
+    >div{
+      align-items: center;
+    }
+  }
+  
 }
 

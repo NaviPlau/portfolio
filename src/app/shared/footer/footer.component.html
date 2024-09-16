@@ -1,7 +1,7 @@
 <section>
-  <div>
+  <div >
     <div>
-      <a href="#">
+      <a routerLink="">
         <div class="logo">
           <div class="initials">
             <div class="p">P</div>
@@ -20,7 +20,8 @@
       <a href="https://github.com/NaviPlau?tab=repositories" target="_blank">Github </a>
       <a href="https://www.linkedin.com/in/paul-ivan-a87585328/" target="_blank">LinkedIn</a>
       <a (click)="mailTo()">Email</a>
-      <a href="inprint">{{ currentLanguage === 'EN' ? 'Imprint' : 'Impressum' }}</a>
+      <a routerLink = "inprint">{{ currentLanguage === 'EN' ? 'Inprint' : 'Impressum' }}</a>
+      
     </div>
   </div>
 </section>

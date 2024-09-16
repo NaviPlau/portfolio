@@ -72,7 +72,7 @@
         <input type="checkbox" id="privacyPolicy" formControlName="privacyPolicy">
         <label for="privacyPolicy">
           {{ currentLanguage === 'EN' ? "I've read the " : 'Ich habe die '}}
-          <a href="policy">{{ currentLanguage === 'EN' ? 'privacy policy' : 'Datenschutzrichtlinie' }}</a>
+          <a routerLink="policy">{{ currentLanguage === 'EN' ? 'privacy policy' : 'Datenschutzrichtlinie' }}</a>
           {{ currentLanguage === 'EN' ? " and agree to the processing of my data as outlined." : " und stimme der Verarbeitung meiner Daten wie beschrieben zu." }}
         </label>
         <div *ngIf="contactForm.get('privacyPolicy')?.touched && contactForm.get('privacyPolicy')?.invalid" class="error">
@@ -91,6 +91,11 @@
       <p>
         {{ currentLanguage === 'EN' ? 'Your email was sent successfully!' : 'Ihre E-Mail wurde erfolgreich gesendet!' }}
       </p>
+    </div>
+    <div class="leftLateral">
+      <a href="">
+        <img src="assets/img/hero/downArrow.png" alt="" />
+      </a>
     </div>
   </div>
 </section>

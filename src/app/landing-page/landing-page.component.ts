@@ -7,12 +7,12 @@ import { PortfolioComponent } from '../portfolio/portfolio.component';
 import { ReferencesComponent } from '../references/references.component';
 import { ContactComponent } from '../contact/contact.component';
 import { LanguageService } from '../services/language.service';
-import { RouterModule, RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet, RouterLinkActive, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [CommonModule, HeroComponent, AboutMeComponent, SkillsComponent, PortfolioComponent, ReferencesComponent, ContactComponent, RouterOutlet, RouterModule],
+  imports: [CommonModule, HeroComponent, AboutMeComponent, SkillsComponent, PortfolioComponent, ReferencesComponent, ContactComponent, RouterOutlet, RouterModule, RouterLink, RouterLinkActive],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss'
 })

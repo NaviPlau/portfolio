@@ -58,12 +58,12 @@ a{
     color: $blue;
   }
   25% {
-    transform: translateX(-100%);
+    transform: translateX(-30%);
     opacity: 0;
   }
   50% {
     opacity: 0;
-    transform: translateX(100%);
+    transform: translateX(50%);
   }
   75% {
     opacity: 1;
@@ -100,6 +100,24 @@ input:-webkit-autofill:focus {
 @media (max-width:500px){
   section{
     padding: 0px 16px;
+  }
+}
+
+@keyframes arrowDown {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(5px); 
+  }
+  50% {
+    transform: translateY(10px); 
+  }
+  75% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0); 
   }
 }
 

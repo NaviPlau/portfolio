@@ -71,7 +71,8 @@ section{
 }
 
 .slide-button:hover span {
-  animation: slideOutAndIn 3s linear infinite;
+  animation: slideOutAndIn 1.8s linear infinite;
+  cursor: pointer;
 }
 
 .infoSlider {
@@ -142,23 +143,7 @@ section{
   animation: arrowDown 1s infinite ease-in-out;
 }
 
-@keyframes arrowDown {
-  0% {
-    transform: translateY(0);
-  }
-  25% {
-    transform: translateY(5px); 
-  }
-  50% {
-    transform: translateY(10px); 
-  }
-  75% {
-    transform: translateY(5px);
-  }
-  100% {
-    transform: translateY(0); 
-  }
-}
+
 
 .leftLine {
   width: 1px;

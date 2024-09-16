@@ -7,7 +7,12 @@
     <div class="slider">
       <div class="slider-container">
         <!-- Left slider item -->
-        <div class="slider-item left">
+        <div class="slider-item left"
+        [ngClass]="{
+          'translate-shadow-left': isMovingRight,
+          'translate-shadow-right': isMovingLeft,
+          'box-shadow': isPrevHovered
+        }">
           <p class="text">{{ getCurrentReferences()[(currentIndex - 1 + getCurrentReferences().length) % getCurrentReferences().length].text }}</p>
           <p>
             <span></span>
@@ -32,7 +37,12 @@
         </div>
         
         <!-- Right slider item -->
-        <div class="slider-item right">
+        <div class="slider-item right"
+        [ngClass]="{
+          'translate-shadow-left': isMovingRight,
+          'translate-shadow-right': isMovingLeft,
+          'box-shadow': isPrevHovered
+        }">
           <p class="text">{{ getCurrentReferences()[(currentIndex + 1) % getCurrentReferences().length].text }}</p>
           <p>
             <span></span>

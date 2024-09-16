@@ -117,7 +117,7 @@ button span {
 }
 
 button:hover span {
-  animation: slideOutAndIn 3s linear infinite;
+  animation: slideOutAndIn 2s linear infinite;
 }
 
 .rightSide{
@@ -226,18 +226,45 @@ button:hover span {
     }
     >div{
       flex-direction: column;
+      align-items: center;
     }
   }
-  .leftSide, .rightSide{
+  .leftSide{
     width: 100%;
     padding: 0;
   }
   .rightSide{
+    width: 60%;
     gap: 32px;
     padding: 40px 0 0 0;
+    display: flex;
+    justify-content: center;
   }
   .skill-container{
     margin-bottom: 30px;
+  }
+}
+
+@media(max-width:1050px){
+  .rightSide{
+    width: 80%;
+  }
+}
+@media(max-width:800px){
+  .rightSide{
+    width: 100%;
+    gap: 20px;
+  }
+}
+
+@media(max-width:620px){
+  .rightSide{
+    gap: 50px;
+  }
+  .skill-container:nth-child(11):hover .newSkills {
+    display: none;
+    transition: 125ms;
+    animation: fadeIn 0.5s forwards;
   }
 }
 
@@ -252,6 +279,7 @@ button:hover span {
     }
   }
   .skill-container{
+    margin: 0;
     >div{
       >img{
         width: 54px;
@@ -269,32 +297,16 @@ button:hover span {
     }
   }
   .rightSide{
-    justify-content: center;
-    gap: 10px;
+   gap: 20px;
     padding: 40px 0 0 0;
+    width: 100%;
   }
 }
 
-@media(max-width: 450px){
-  .rightSide{
-    justify-content: flex-start;
-  }
-}
-@media(max-width: 400px){
-  .rightSide{
-    justify-content: flex-start;
-  }
-}
 
-@media(max-width: 360px){
-  .rightSide{
-    justify-content: flex-start;
-    gap: 30px;
-  }
-}
 
 @media (pointer: coarse) {
   button span {
-    animation: slideOutAndIn 3s linear infinite;
+    animation: slideOutAndIn 1s linear infinite;
   }
 }

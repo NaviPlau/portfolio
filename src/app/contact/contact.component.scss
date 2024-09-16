@@ -402,4 +402,27 @@ button:enabled:hover {
   button:enabled span {
     animation: slideOutAndIn 3s linear infinite;
   }
+  .checkbox-group{
+    input{
+      box-shadow: inset 0px 0px 8px 10px $blue-hover, 0px 0px 2px 5px $blue-hover;
+      animation: rotate3D 5s infinite linear;
+    }
+  }
 }
+
+
+.leftLateral{
+  position: absolute;
+  bottom: 20px;
+  a{
+    border: 1px solid $blue-hover;
+    padding: 12px 8px;
+    border-radius: 20px;
+    >img{
+      transform: rotate(0deg);
+      animation: arrowDown 2s infinite reverse ease;
+    }
+    
+  }
+}
+

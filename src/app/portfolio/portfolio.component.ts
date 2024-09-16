@@ -19,7 +19,6 @@ export class PortfolioComponent {
   hoveredProject: string = '';
   selectedProject: string | null = null;
   currentLanguage: string = 'EN';
-
   /**
    * Data for projects in different languages.
    * @type {Object}
@@ -198,5 +197,7 @@ export class PortfolioComponent {
   closeOverlay() {
     this.selectedProject = null;
   }
+
+  
 }
 
