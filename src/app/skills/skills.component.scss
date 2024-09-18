@@ -303,10 +303,8 @@ button:hover span {
   }
 }
 
-
-
 @media (pointer: coarse) {
   button span {
-    animation: slideOutAndIn 1s linear infinite;
+    animation: slideOutAndIn 3s linear infinite;
   }
 }
