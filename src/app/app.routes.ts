@@ -38,7 +38,7 @@ export const routes: Routes = [
    * - `path: 'inprint'`: The URL path for the inprint page.
    * - `component: InprintComponent`: The component to display for this route.
    */
-  { path: 'inprint', component: InprintComponent },
+  { path: 'imprint', component: InprintComponent },
   
   /**
    * Route for the privacy policy page.

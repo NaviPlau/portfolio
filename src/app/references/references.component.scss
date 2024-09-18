@@ -242,3 +242,16 @@ section {
     }
   }
 }
+
+@media (pointer:coarse){
+  .prev{
+    &:hover{
+      right: 10px;
+    }
+  }
+  .next{
+    &:hover{
+      left: 10px;
+    }
+  }
+}

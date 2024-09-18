@@ -167,7 +167,8 @@ section{
   cursor: pointer;
   color: #fff;
   font-family: 'karla';
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
+  text-wrap: nowrap;
 }
 
 .contactImages {
@@ -283,3 +284,10 @@ section{
     animation: slideOutAndIn 3s linear infinite;
   }
 }
+
+@media (max-height:650px){
+  .rightLateral{
+    height: 70vh;
+  }
+}
+

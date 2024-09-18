@@ -39,7 +39,7 @@ export class HeroComponent {
    * The email has a predefined recipient, subject, and body.
    */
   mailTo(): void {
-    const email = "naviplau@outlook.com";
+    const email = "info@paul-ivan.com";
     const subject = "Portfolio contact";
     const body = "This email was sent from an Angular app built by Ivan Paul.";
     const mailtoUrl = `mailto:${email}?&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
