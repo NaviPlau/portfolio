@@ -44,7 +44,7 @@ section{
   top: 0.5px;
   font-size: 60px;
   font-weight: bold;
-  color: #5cd1b9;
+  color: $blue;
   transform: rotate(90deg);
   transition: all 0.3s ease-in-out;
   cursor: pointer
@@ -55,7 +55,7 @@ section{
   left: 0px;
   font-size: 60px;
   font-weight: bold;
-  color: #5cd1b9;
+  color: $blue;
   transition: all 0.125s ease-in-out;
   cursor: pointer
 }
@@ -83,17 +83,17 @@ section{
 
 .logo:hover .p, .logo:hover .i {
   color: transparent;
-  -webkit-text-stroke: 1px #5cd1b9;
+  -webkit-text-stroke: 1px $blue;
 }
 
 .logo:hover .name {
   color: transparent; 
-  -webkit-text-stroke: 1px #5cd1b9; 
+  -webkit-text-stroke: 1px $blue; 
 }
 
 .logo:hover .name span {
   color: transparent; 
-  -webkit-text-stroke: 1px #5cd1b9; 
+  -webkit-text-stroke: 1px $blue; 
 }
 
 
